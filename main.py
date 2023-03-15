@@ -103,6 +103,6 @@ async def delete_book(book_id: str):
         return {"message": "Failed to delete book"}
 
 if __name__ == "__main__":
-    config = uvicorn.Config("main:app", port=int(os.getenv("PORT")), log_level="info")
+    config = uvicorn.Config("main:app", port=int(os.getenv("PORT")), log_level="info", reload=True)
     server = uvicorn.Server(config)
     server.run()
